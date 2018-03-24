@@ -1,0 +1,4 @@
+Install most uptodate version of Java and then execute following in the terminal to make sure Mac used the most current version of Java Runtime Enviornment.
+
+
+export PATH="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin:$PATH"
