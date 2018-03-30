@@ -1,0 +1,13 @@
+# 
+
+from tabula import read_pdf
+# single Page Import
+df=read_pdf("/Users/manasishetye/Desktop/OnePage.pdf") 
+# all Page Import
+df4=read_pdf("/Users/manasishetye/Desktop/FourPage.pdf", pages="all")
+Page Range
+df4=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages="2-4")
+
+Count Pages
+Iterate Pages in entire document
+
