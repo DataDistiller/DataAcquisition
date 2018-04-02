@@ -26,12 +26,17 @@ df1=read_pdf("/Users/manasishetye/Desktop/Assessment Roll_1.pdf", pages=2)
 Single Page Scan 
 
 #######################
-for i in range(inputpdf.numPages):
-  if i=="1"then:
-    df =read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=1)
-  else:
-   dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=i)
-   df=df.append(dfi)
+npages=inputpdf.numPages
+
+napages =20
+df=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=1)
+
+for i in range(1, npages,5):
+  d=str(i)+'-'+str(5)
+  dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=d)
+  df=df.append(dfi)
+  
+  
 for i in range(0,5,1):
   df=df[df.iloc[ :,0]!=df.iloc[i,0]] 
    
