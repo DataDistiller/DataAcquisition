@@ -23,26 +23,37 @@ Initialize df dataframe
 
 df=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=5)
 df1=read_pdf("/Users/manasishetye/Desktop/Assessment Roll_1.pdf", pages=2)
-Single Page Scan 
 
+
+Multipage Scan
 #######################
+
 npages=inputpdf.numPages
-
-napages =20
 df=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=1)
-
-for i in range(1, npages,5):
-  d=str(i)+'-'+str(5)
-  dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=d)
+for i in range(2,npages,5):
+  cpages=str(i)+'-'+str(i+4)
+  dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
   df=df.append(dfi)
-  
-  
+
+npages=7
+df=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=1)
+cpage=2
+while (cpage<npages) :
+  cpages=str(cpage)+'-'+str(min(cpage+4,npages))
+  dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
+  df=df.append(dfi)
+  cpage=cpage+5
+
+
+
+
+
 for i in range(0,5,1):
   df=df[df.iloc[ :,0]!=df.iloc[i,0]] 
    
-Multipage Scan
+
 ######################
-Working Part
+Working Part Single Page Scan 
 ######################
 
 for i in range(inputpdf.numPages):
