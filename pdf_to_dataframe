@@ -15,3 +15,13 @@ while (cpage<=npages):
 
 for i in range(0,5,1):
   df=df[df.iloc[ :,0]!=df.iloc[0,0]] 
+
+
+
+nrows=len(df)
+crow=0
+df = pd.DataFrame([])
+while (crow<=nrows):
+  dfni=df.iloc[crow,0]
+  dfn=dfn.append(dfni)
+  crow=crow+8
