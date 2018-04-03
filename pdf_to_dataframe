@@ -1,0 +1,12 @@
+import pandas as pd
+from tabula import read_pdf
+from PyPDF2 import PdfFileReader,PdfFileWriter
+inputpdf=PdfFileReader(open("/Users/manasishetye/Desktop/FourPage.pdf","rb"))
+npages=inputpdf.numPages
+cpage=1
+df = pd.DataFrame([])
+while (cpage<=npages):
+  cpages=str(cpage)+'-'+str(min(cpage+4,npages))
+  dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
+  df=df.append(dfi)
+  cpage=cpage+5
