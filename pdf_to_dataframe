@@ -10,3 +10,8 @@ while (cpage<=npages):
   dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
   df=df.append(dfi)
   cpage=cpage+5
+  
+# removes first five rows iteratively 
+
+for i in range(0,5,1):
+  df=df[df.iloc[ :,0]!=df.iloc[0,0]] 
