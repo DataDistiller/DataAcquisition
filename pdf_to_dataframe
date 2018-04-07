@@ -21,8 +21,26 @@ for i in range(0,5,1):
 # List comprehension
 # Dataset Created is used to miss first property record as it used to start with 8 hence index is reduced by 8
 
-df0 =[df.iloc[crow-8,0] for crow in df.index if (crow%8==0 and crow<nrows)]
+# Property Block
+
+df_P_L1 =[df.iloc[crow-8,0] for crow in df.index if (crow%8==0 and crow<nrows)]
+df_P_L3 =[df.iloc[crow-5,0] for crow in df.index if (crow%8==0 and crow<nrows)]
+df_P_L4 =[df.iloc[crow-4,0] for crow in df.index if (crow%8==0 and crow<nrows)]
+
+
+# Owner Block Data Fetch only Four Lines
+
+df_O_L1 =[df.iloc[crow-8,1] for crow in df.index if (crow%8==0 and crow<nrows)]
+df_O_L2 =[df.iloc[crow-7,1] for crow in df.index if (crow%8==0 and crow<nrows)]
+df_O_L3 =[df.iloc[crow-6,1] for crow in df.index if (crow%8==0 and crow<nrows)]
+df_O_L4 =[df.iloc[crow-5,1] for crow in df.index if (crow%8==0 and crow<nrows)]
+
+# Property Codes
+
 df2 =[df.iloc[crow-8,2] for crow in df.index if (crow%8==0 and crow<nrows)]
+
+
+
 df3 =[df.iloc[crow-8,3] for crow in df.index if (crow%8==0 and crow<nrows)]
 df4 =[df.iloc[crow-8,4] for crow in df.index if (crow%8==0 and crow<nrows)]
 df5 =[df.iloc[crow-8,5] for crow in df.index if (crow%8==0 and crow<nrows)]
@@ -33,17 +51,11 @@ df9 =[df.iloc[crow-8,9] for crow in df.index if (crow%8==0 and crow<nrows)]
 df10 =[df.iloc[crow-8,10] for crow in df.index if (crow%8==0 and crow<nrows)]
 df11 =[df.iloc[crow-8,11] for crow in df.index if (crow%8==0 and crow<nrows)]
 
-# Owner Block Data Fetch only Four Lines
 
-df_O_L1 =[df.iloc[crow-8,1] for crow in df.index if (crow%8==0 and crow<nrows)]
-df_O_L2 =[df.iloc[crow-7,1] for crow in df.index if (crow%8==0 and crow<nrows)]
-df_O_L3 =[df.iloc[crow-6,1] for crow in df.index if (crow%8==0 and crow<nrows)]
-df_O_L4 =[df.iloc[crow-5,1] for crow in df.index if (crow%8==0 and crow<nrows)]
 
-df_P_Add1 =[df.iloc[crow-5,0] for crow in df.index if (crow%8==0 and crow<nrows)]
-df_P_Area =[df.iloc[crow-4,0] for crow in df.index if (crow%8==0 and crow<nrows)]
 
-df_zip=pd.DataFrame(list(zip(df0,df_P_Add1,df_P_Area,df_O_L1,df_O_L2,df_O_L3,df_O_L4,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11)),columns=['Section_Block','P_Add','Area','O_L1','O_L2','O_L3','O_L4','Roll_Section','Full','Land','Total','Exempt','Exemption','Village','Rate','Tax','Total'])
+
+df_zip=pd.DataFrame(list(zip(df_P_L1,df_P_L2,df_P_L4,df_O_L1,df_O_L2,df_O_L3,df_O_L4,df2,df3,df4,df5,df6,df7,df8,df9,df10,df11)),columns=['Section_Block','P_Add','Area','O_L1','O_L2','O_L3','O_L4','Roll_Section','Full','Land','Total','Exempt','Exemption','Village','Rate','Tax','Total'])
 df_zip
 # to get all columns list(df)
 
