@@ -11,11 +11,13 @@ while (cpage<=npages):
   df=df.append(dfi)
   cpage=cpage+5
   
-# removes first five rows iteratively 
+# removes first five rows iteratively and then header 
 
 for i in range(0,5,1):
-  df=df[df.iloc[ :,0]!=df.iloc[0,0]] 
+  df=df[df.iloc[ :,0]!=df.iloc[0,0]]
+df=df.loc[df['Last Known Owner Name']!='Last Known Owner Name']
 
+Remove headers
 
 
 nrows=len(df)
@@ -30,6 +32,7 @@ while (crow<=nrows):
 # List comprehension
 
 Get the 8th row in second column and create a dataset
+nrows=len(df)
 dfn =[df.iloc[crow,1] for crow in df.index if (crow%8==0 and crow<nrows)]
 
 
