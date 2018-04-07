@@ -36,6 +36,11 @@ nrows=len(df)
 dfn =[df.iloc[crow,1] for crow in df.index if (crow%8==0 and crow<nrows)]
 
 
-
+One Line separately
+ dfn =[df.iloc[crow,] for crow in df.index if (crow%8==0 and crow<nrows)]
+ 
+All at once
+ 
+ dfn =[df.iloc[crow,df.columns.get_loc(c)] for c in df.columns for crow in df.index if (crow%8==0 and crow<nrows)]
 
 
