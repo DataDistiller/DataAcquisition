@@ -20,8 +20,19 @@ for i in range(0,5,1):
 
 nrows=len(df)
 crow=0
-df = pd.DataFrame([])
+dfn = pd.DataFrame([])
 while (crow<=nrows):
-  dfni=df.iloc[crow,0]
+  dfni=df.iloc[crow,1]
   dfn=dfn.append(dfni)
   crow=crow+8
+
+
+# List comprehension
+
+Get the 8th row in second column and create a dataset
+dfn =[df.iloc[crow,1] for crow in df.index if (crow%8==0 and crow<nrows)]
+
+
+
+
+
