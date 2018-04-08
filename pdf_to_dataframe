@@ -4,7 +4,8 @@ from PyPDF2 import PdfFileReader,PdfFileWriter
 inputpdf=PdfFileReader(open("/Users/manasishetye/Desktop/FourPage.pdf","rb"))
 npages=inputpdf.numPages
 
-
+Path='/Users/manasishetye/Desktop/'
+Filename ='FourPage.pdf'
 
 #overriding number of pages 
 npages=425
@@ -12,19 +13,54 @@ iter_count = 100
 cpage=1
 df = pd.DataFrame([])
 
+
+
 while (cpage<=npages):
+  
   cpages=str(cpage)+'-'+str(min(cpage+iter_count,npages))
+  
   dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
   df=df.append(dfi)
   cpage=cpage+iter_count
+  
 error is between three pages 501-502
+
+# Design inner loop once error is happned
+# Skip Page if required
+# Recursion/call to function would be the best for this type operation
+
 npages=502
 iter_count = 75
 cpage=501
 df = pd.DataFrame([])
 
+
+while (cpage<=npages):
+  try:
+    cpages=str(cpage)+'-'+str(min(cpage+iter_count,npages)
+    dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
+    df=df.append(dfi)
+    cpage=cpage+iter_count
+  except:
+    print("Bad Page")
+
+
+
+try:
+     print("pop")
+except:
+     print("An error has occurred!")
+else:
+     print("Everything went smoothly!")
+finally:
+     print("Finishing up now...")
+     
+     
+
+  
 while (cpage<=npages):
   cpages=str(cpage)+'-'+str(min(cpage+iter_count,npages))
+  
   dfi=read_pdf("/Users/manasishetye/Desktop/T3_001_015.pdf", pages=cpages)
   df=df.append(dfi2[dfi4.columns])
     
